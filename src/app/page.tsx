@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative w-full h-[500px] bg-white text-black flex flex-col items-center justify-center text-center px-4 pt-16">
+      <section className="relative w-full h-[500px] bg-white text-black flex flex-col items-center justify-center text-center px-4">
         <div className="absolute inset-0 bg-gray-200 opacity-50"></div>
         <img
           src="https://img.freepik.com/free-photo/aerial-view-man-typing-retro-typewriter_53876-40995.jpg?t=st=1742297249~exp=1742300849~hmac=7843032754d21186588ffae2c4ae3ac3961e7a3452429dec5add7e68fd158036&w=1800"
