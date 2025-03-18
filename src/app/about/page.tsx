@@ -22,7 +22,7 @@ const authors = [
 export default function About() {
   return (
     <>
-      <div className="max-w-4xl mx-auto p-6 space-y-8 pt-16">
+      <div className="max-w-4xl mx-auto p-6 space-y-8 pt-22">
         {/* Blog History */}
         <section className="text-center">
           <h1 className="text-3xl font-bold mb-4">About Our Blog</h1>
