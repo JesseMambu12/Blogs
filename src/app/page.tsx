@@ -8,7 +8,7 @@ export default function Home() {
       <section className="relative w-full h-[500px] bg-white text-black flex flex-col items-center justify-center text-center px-4">
         <div className="absolute inset-0 bg-gray-200 opacity-50"></div>
         <Image
-          src="@/Assets/blog_pic_15.png"
+          src="https://img.freepik.com/free-photo/aerial-view-man-typing-retro-typewriter_53876-40995.jpg?t=st=1742297249~exp=1742300849~hmac=7843032754d21186588ffae2c4ae3ac3961e7a3452429dec5add7e68fd158036&w=1800"
           alt="Hero Image"
           width={4000}
           height={4000}
@@ -61,7 +61,7 @@ export default function Home() {
           />
           <button
             type="submit"
-            className="border border-black py-2 sm:py-4 px-6 sm:px-8 sm:w-full active:bg-gray-600 active:text-white"
+            className="border border-black py-2 sm:py-4 px-6 sm:px-8 active:bg-gray-600 active:text-white"
           >
             Subscribe
           </button>
