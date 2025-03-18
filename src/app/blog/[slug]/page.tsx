@@ -37,7 +37,7 @@ export default function BlogDetail() {
   return (
     <>
       {/* Blog History */}
-      <Link href="/Bloglist" className="flex ml-20 pl-10 pt-5">
+      <Link href="/Bloglist" className="flex ml-20 pl-10 pt-21">
       <IoMdArrowRoundBack className="text-black text-5xl "/>
  
       </Link>

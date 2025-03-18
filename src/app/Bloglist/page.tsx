@@ -33,7 +33,7 @@ export default function BlogList() {
   return (
     <>
       <div>
-        <div className="flex justify-center md:gap-6 my-10 gap-0">
+        <div className="flex justify-center md:gap-6 my-10 gap-0 pt-20">
           {["All", "Technology", "Startup", "Lifestyle"].map((category) => (
             <button
               key={category}
