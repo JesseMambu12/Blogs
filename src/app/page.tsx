@@ -1,20 +1,17 @@
 import Blogteaser from "@/components/Blogteaser";
+import Image from "next/image";
 
-interface BlogTeaserProps {
-  title: string;
-  description: string;
-  category: string;
-  image: string;
-}
 export default function Home() {
   return (
     <div>
       {/* Hero Section */}
       <section className="relative w-full h-[500px] bg-white text-black flex flex-col items-center justify-center text-center px-4">
         <div className="absolute inset-0 bg-gray-200 opacity-50"></div>
-        <img
+        <Image
           src="/assets/blog_pic_15.png"
           alt="Hero Image"
+          width={4000}
+          height={4000}
           className="absolute inset-0 w-full h-full object-cover opacity-38"
         />
         <div className="relative z-10 max-w-[90%] sm:max-w-[740px]">
