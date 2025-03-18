@@ -7,11 +7,9 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative w-full h-[500px] bg-white text-black flex flex-col items-center justify-center text-center px-4">
         <div className="absolute inset-0 bg-gray-200 opacity-50"></div>
-        <Image
+        <img
           src="https://img.freepik.com/free-photo/aerial-view-man-typing-retro-typewriter_53876-40995.jpg?t=st=1742297249~exp=1742300849~hmac=7843032754d21186588ffae2c4ae3ac3961e7a3452429dec5add7e68fd158036&w=1800"
           alt="Hero Image"
-          width={4000}
-          height={4000}
           className="absolute inset-0 w-full h-full object-cover opacity-38"
         />
         <div className="relative z-10 max-w-[90%] sm:max-w-[740px]">
