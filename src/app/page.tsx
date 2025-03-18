@@ -1,94 +1,75 @@
-"use client";
-import { useState, useEffect } from "react";
-import axios from "axios";
-import { FaArrowRight } from "react-icons/fa6";
-import Link from "next/link";
-import Image from "next/image";
+import Blogteaser from "@/components/Blogteaser";
 
-
-interface Blog {
-  objectId: string;
-  Title: string;
-  Image?: string; 
-  Category?: string;
-  Content?: string;
+interface BlogTeaserProps {
+  title: string;
+  description: string;
+  category: string;
+  image: string;
 }
-
-export default function BlogList() {
-  const [menu, setMenu] = useState("All");
-  const [blogs, setBlogs] = useState<Blog[]>([]); 
-
-  const handleGetBlogs = async () => {
-    try {
-      const response = await axios.get("/api/blogs"); 
-      if (response.data && Array.isArray(response.data)) {
-        setBlogs(response.data);
-      }
-    } catch (error) {
-      console.error("Error fetching blogs:", error);
-    }
-  };
-
-  useEffect(() => {
-    handleGetBlogs();
-  }, []);
-
+export default function Home() {
   return (
-    <>
-      <div>
-
-        <div className="flex justify-center gap-6 my-10">
-          {["All", "Technology", "Startup", "Lifestyle"].map((category) => (
-            <button
-              key={category}
-              onClick={() => setMenu(category)}
-              className={`py-1 px-4 rounded-sm ${
-                menu === category ? "bg-black text-white" : ""
-              }`}
-            >
-              {category}
-            </button>
-          ))}
+    <div>
+      {/* Hero Section */}
+      <section className="relative w-full h-[500px] bg-white text-black flex flex-col items-center justify-center text-center px-4">
+        <div className="absolute inset-0 bg-gray-200 opacity-50"></div>
+        <img
+          src="/assets/blog_pic_15.png"
+          alt="Hero Image"
+          className="absolute inset-0 w-full h-full object-cover opacity-38"
+        />
+        <div className="relative z-10 max-w-[90%] sm:max-w-[740px]">
+          <h1 className="text-3xl sm:text-6xl font-extrabol">
+            Welcome to Our Blog
+          </h1>
+          <p className="mt-4 text-base sm:text-lg">
+            Stay updated with the latest trends, news, and insights from our
+            experts.
+          </p>
         </div>
+      </section>
 
-        <div className="flex flex-wrap gap-4 justify-center">
-          {blogs.length === 0 ? (
-            <p className="text-gray-500">No blogs available.</p>
-          ) : (
-            blogs
-              .filter((blog) => menu === "All" || blog?.Category === menu)
-              .map((blog) => (
-                <Link
-                  key={blog.objectId}
-                  href={`/blog/${decodeURIComponent(blog.objectId)}`} 
-                  className="block p-4 mb-2 max-w-[330px] sm:max-w-[300px] bg-white border border-black hover:shadow-[-7px_7px_0px]"
-                >
-                  <div className="relative w-full h-[200px]">
-                    <Image
-                      src={blog?.Image || "/default-image.jpg"} 
-                      alt={blog?.Title || "Blog Image"}
-                      fill
-                      className="object-cover border-b border-black"
-                    />
-                  </div>
-
-                  <p className="ml-5 mt-5 px-1 inline-block bg-black text-white text-sm">
-                    {blog?.Category || "Uncategorized"}
-                  </p>
-                  <h2 className="mb-2 text-lg font-medium tracking-tight text-gray-900">
-                    {blog?.Title || "Untitled"}
-                  </h2>
-                  <p className="mb-3 text-sm tracking-tight text-gray-700">
-                    {blog?.Content ? `${blog.Content.substring(0, 100)}...` : "No content available."}
-                  </p>
-                  <div className="inline-flex items-center py-2 font-semibold text-center">
-                    Read more <FaArrowRight className="ml-2" />
-                  </div>
-                </Link>
-              ))
-          )}
+      {/* Featured Posts */}
+      <section className="max-w-5xl mx-auto my-10 px-4">
+        <h2 className="text-xl sm:text-3xl font-semibold text-center mb-6">
+          {" "}
+          Our Popular Blogs
+        </h2>
+        <div className="flex  items-center justify-center">
+          <Blogteaser title={""} description={""} category={""} image={""} />
         </div>
+      </section>
+
+      {/* Subscription Section */}
+      <div className="text-center my-8 px-4">
+        <h1 className="text-2xl sm:text-4xl font-medium">
+          Join Our Community!
+        </h1>
+        <p className="mt-6 sm:mt-10 max-w-[90%] sm:max-w-[740px] m-auto text-sm sm:text-base">
+          Subscribe now and enjoy exclusive benefits. You'll get the latest blog
+          updates directly to your inbox, access exclusive content and expert
+          insights, and be the first to know about new trends and tips. Enjoy
+          special subscriber-only newsletters, stay ahead with industry
+          knowledge, and receive hand-picked, high-quality articles tailored to
+          your interests. We guarantee no spam, just valuable and insightful
+          content curated for you!
+        </p>
+        <form
+          className="flex flex-col sm:flex-row items-center justify-center max-w-[90%] sm:max-w-[500px] mx-auto mt-10 border border-black shadow-[-7px_7px_0px]"
+          action=""
+        >
+          <input
+            type="email"
+            placeholder="Enter Your email"
+            className="pl-4 py-2 flex-grow outline-none"
+          />
+          <button
+            type="submit"
+            className="border border-black py-2 sm:py-4 px-6 sm:px-8 sm:w-full active:bg-gray-600 active:text-white"
+          >
+            Subscribe
+          </button>
+        </form>
       </div>
-    </>
+    </div>
   );
 }
