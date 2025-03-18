@@ -24,7 +24,7 @@ export default function BlogTeaser({ title, description, category, image }: Blog
 
   const handleGetBlogs = async () => {
     try {
-      const response = await axios.get("https://blogspost-chi.vercel.app/api/blogs");
+      const response = await axios.get("https://blogspost-git-main-jesses-projects-383a635c.vercel.app/api/blogs");
       setBlogs(response.data.data);
     } catch (error) {
       console.log(error);

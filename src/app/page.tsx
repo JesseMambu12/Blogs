@@ -8,7 +8,7 @@ export default function Home() {
       <section className="relative w-full h-[500px] bg-white text-black flex flex-col items-center justify-center text-center px-4">
         <div className="absolute inset-0 bg-gray-200 opacity-50"></div>
         <Image
-          src="/assets/blog_pic_15.png"
+          src="@/Assets/blog_pic_15.png"
           alt="Hero Image"
           width={4000}
           height={4000}
