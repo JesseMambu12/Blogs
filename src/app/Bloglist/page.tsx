@@ -17,7 +17,7 @@ export default function BlogList() {
 
   const handleGetBlogs = async () => {
     try {
-      const response = await axios.get("https://blogspost-git-main-jesses-projects-383a635c.vercel.app/api/blogs");
+      const response = await axios.get("https://blogspost-chi.vercel.app/api/blogs");
       if (response.data && Array.isArray(response.data.data)) {
         setBlogs(response.data.data);
       }
